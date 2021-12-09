@@ -44,10 +44,11 @@ end
     
 %Gaunamos tinklo reikšmės po apmokymo
 Y = zeros(1,length(d));
-for i = 1:length(x)
+X = [0.1:1/60:1];
+for i = 1:length(X)
     %Paslėptojo sluoksnio lokalios išeities skaičiavimas
-    F1 = exp(-(x(i)-c1)^2/(2*r1^2));
-    F2 = exp(-(x(i)-c2)^2/(2*r2^2));
+    F1 = exp(-(X(i)-c1)^2/(2*r1^2));
+    F2 = exp(-(X(i)-c2)^2/(2*r2^2));
     % aktyvavimo funkcijos pritaikymas 
     y = F1*w1 + F2*w2 + w0;
     %Saugome tarpines reikšmes
@@ -55,5 +56,5 @@ for i = 1:length(x)
 end
 
 hold on 
-plot(x,Y,'r+')
+plot(X,Y,'r+')
 hold off;
